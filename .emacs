@@ -38,7 +38,7 @@
       calendar-day-name-array ["Dimanche" "Lundi" "Mardi" "Mercredi"
                                "Jeudi" "Vendredi" "Samedi"]
       calendar-month-name-array ["Janvier"   "Février" "Mars"     "Avril"
-				 "Mai"       "Juin"    "Juillet"  "Août"
+                                 "Mai"       "Juin"    "Juillet"  "Août"
                                  "Septembre" "Octobre" "Novembre" "Décembre"]
       org-agenda-files '("~/org/")
       )
