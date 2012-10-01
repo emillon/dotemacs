@@ -42,3 +42,8 @@
                                  "Septembre" "Octobre" "Novembre" "Décembre"]
       org-agenda-files '("~/org/")
       )
+
+; Use default browser
+(setq browse-url-browser-function 'browse-url-generic
+      browse-url-generic-program "sensible-browser"
+      )
