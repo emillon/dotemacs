@@ -7,6 +7,7 @@
 (blink-cursor-mode 0)
 (setq inhibit-startup-screen t)
 (setq show-paren-mode t)
+(setq backup-directory-alist `(("." . "~/.emacs.d/backups")))
 
 ; ERC
 (require 'erc)
