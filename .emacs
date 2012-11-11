@@ -8,6 +8,8 @@
 (setq inhibit-startup-screen t)
 (setq show-paren-mode t)
 (setq backup-directory-alist `(("." . "~/.emacs.d/backups")))
+(setq custom-file "~/.emacs-custom.el")
+(load custom-file)
 
 ; ERC
 (require 'erc)
