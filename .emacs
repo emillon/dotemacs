@@ -5,6 +5,7 @@
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (blink-cursor-mode 0)
+(show-paren-mode)
 (setq inhibit-startup-screen t)
 (setq show-paren-mode t)
 (setq backup-directory-alist `(("." . "~/.emacs.d/backups")))
@@ -19,6 +20,33 @@
 (defmacro when-available (func foo)
   "*Do something if FUNCTION is available."
   `(when (fboundp ,func) ,foo))
+
+; el-get
+(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+
+(unless (require 'el-get nil 'noerror)
+    (with-current-buffer
+            (url-retrieve-synchronously
+                     "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
+                (goto-char (point-max))
+                    (eval-print-last-sexp)))
+
+(el-get 'sync)
+
+(setq el-get-sources
+      '(el-get
+	(:name undo-tree :type builtin)
+	evil
+	)
+      )
+
+; evil
+(require 'evil)
+(evil-mode 1)
+(define-key evil-insert-state-map (kbd "j k") 'evil-normal-state)
+
+; Always split vertically
+(setq split-height-threshold nil)
 
 ; ERC
 (require 'erc)
