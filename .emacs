@@ -11,6 +11,7 @@
 (setq backup-directory-alist `(("." . "~/.emacs.d/backups")))
 (setq custom-file "~/.emacs-custom.el")
 (load custom-file)
+(set-cursor-color "#ffffff")
 
 ; el-get
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
