@@ -13,6 +13,15 @@
 (load custom-file)
 (set-cursor-color "#ffffff")
 
+; Conditional loading
+(defmacro require-maybe (feature &optional file)
+  "*Try to require FEATURE, but don't signal an error if `require' fails."
+  `(require ,feature ,file 'noerror))
+
+(defmacro when-available (func foo)
+  "*Do something if FUNCTION is available."
+  `(when (fboundp ,func) ,foo))
+
 ; el-get
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -51,13 +60,15 @@
 (setq erc-auto-query 'window-noselect)
 
 ; gnugo
-(require 'gnugo)
-(require 'gnugo-xpms)
+(when (require-maybe 'gnugo)
+  (require-maybe 'gnugo-xpms)
+  )
 
 ; color
-(require 'color-theme)
-(require 'color-theme-molokai)
-(color-theme-molokai)
+(when (require-maybe 'color-theme)
+  (require 'color-theme-molokai)
+  (color-theme-molokai)
+  )
 
 ; org
 (require 'org)
