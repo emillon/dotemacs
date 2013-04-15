@@ -44,7 +44,6 @@
 ; evil
 (require 'evil)
 (evil-mode 1)
-(define-key evil-insert-state-map (kbd "j k") 'evil-normal-state)
 
 ; Always split vertically
 (setq split-height-threshold nil)
