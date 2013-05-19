@@ -86,7 +86,10 @@
                                  "Mai"       "Juin"    "Juillet"  "Août"
                                  "Septembre" "Octobre" "Novembre" "Décembre"]
       org-agenda-files '("~/org/")
+      org-directory "~/org"
+      org-default-notes-file (concat org-directory "/notes.org")
       )
+(define-key global-map "\C-cr" 'org-capture)
 
 ; Use default browser
 (setq browse-url-browser-function 'browse-url-generic
