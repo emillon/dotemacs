@@ -70,8 +70,11 @@
   )
 
 ; org
+(add-to-list 'load-path "/usr/share/org-mode/lisp")
 (require 'org)
 (require 'org-notmuch)
+(require 'org-contacts)
+(require 'org-location-google-maps)
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
