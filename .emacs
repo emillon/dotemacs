@@ -105,3 +105,6 @@
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "sensible-browser"
       )
+
+; Magit
+(define-key global-map "\C-cg" 'magit-status)
