@@ -89,10 +89,16 @@
       org-default-notes-file (concat org-directory "/notes.org")
       )
 (define-key global-map "\C-cr" 'org-capture)
-; use [[bts:bugno]] in org-mode
+; Custom links:
+; [[bts:bugno]]
 (org-add-link-type "bts" 'org-bts-open)
 (defun org-bts-open (bug)
   (browse-url (concat "http://bugs.debian.org/" bug))
+  )
+; [[discogs:relno]]
+(org-add-link-type "discogs" 'org-discogs-open)
+(defun org-discogs-open (relno)
+  (browse-url (concat "http://www.discogs.com/release/" relno))
   )
 
 ; Use default browser
