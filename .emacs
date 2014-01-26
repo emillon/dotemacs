@@ -100,6 +100,10 @@
 (defun org-discogs-open (relno)
   (browse-url (concat "http://www.discogs.com/release/" relno))
   )
+; babel languages
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((python . t)))
 
 ; Use default browser
 (setq browse-url-browser-function 'browse-url-generic
