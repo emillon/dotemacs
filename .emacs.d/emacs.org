@@ -141,6 +141,12 @@
    '((python . t)))
 #+end_src
 
+** Habit tracking
+#+begin_src emacs-lisp
+  (setq org-todo-keywords '((sequence "TODO(!)" "|" "DONE(!)")))
+  (add-to-list 'org-modules 'org-habit)
+  (require 'org-habit)
+#+end_src
 * Magit
 
 #+begin_src emacs-lisp
