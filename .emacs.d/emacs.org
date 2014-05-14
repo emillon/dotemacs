@@ -104,8 +104,7 @@
   (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
   (define-key global-map "\C-cl" 'org-store-link)
   (define-key global-map "\C-ca" 'org-agenda)
-  (setq org-log-done 'time
-        calendar-week-start-day 1
+  (setq calendar-week-start-day 1
         calendar-day-name-array ["Dimanche" "Lundi" "Mardi" "Mercredi"
                                  "Jeudi" "Vendredi" "Samedi"]
         calendar-month-name-array ["Janvier"   "Février" "Mars"     "Avril"
