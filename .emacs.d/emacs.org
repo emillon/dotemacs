@@ -114,7 +114,6 @@
         org-directory "~/org"
         org-default-notes-file (concat org-directory "/notes.org")
         )
-  (define-key global-map "\C-cr" 'org-capture)
 #+end_src
 
 ** Custom links
@@ -146,6 +145,18 @@
   (add-to-list 'org-modules 'org-habit)
   (require 'org-habit)
 #+end_src
+** Capture
+#+begin_src emacs-lisp
+  (define-key global-map "\C-cr" 'org-capture)
+  (setq org-capture-templates '(
+	("j" "Journal" entry (file+datetree (concat org-directory "/journal.org"))
+	    "* %U\n\n%?\n"
+            :empty-lines 1
+	)
+    )
+  )
+#+end_src
+
 * Magit
 
 #+begin_src emacs-lisp
