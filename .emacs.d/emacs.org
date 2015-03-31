@@ -174,3 +174,8 @@
 #+begin_src emacs-lisp
   (define-key global-map "\C-cg" 'magit-status)
 #+end_src
+* drill
+
+#+begin_src emacs-lisp
+(require 'org-drill)
+#+end_src
