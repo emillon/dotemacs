@@ -36,7 +36,8 @@
     `(when (fboundp ,func) ,foo))
 #+end_src
 
-* el-get
+* packages
+** el-get
 
 #+begin_src emacs-lisp
   (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
@@ -56,6 +57,17 @@
           evil
           )
         )
+#+end_src
+
+** MELPA
+
+#+begin_src emacs-lisp
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
+(when (< emacs-major-version 24)
+  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+(package-initialize)
 #+end_src
 
 * evil
